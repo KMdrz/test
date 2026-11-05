@@ -148,3 +148,32 @@ def test_08_non_finite_or_out_of_range(manifest, valid_records, column, invalid_
 
     assert len(result.quarantine) == 1
     assert len(result.valid_records) == 1
+
+
+def test_09_exact_duplicates(manifest, valid_records):
+    duplicated_data = pd.concat(
+        [valid_records, valid_records.iloc[[0]]],
+        ignore_index=True,
+    )
+
+    result = validate_dataset(duplicated_data, manifest)
+
+    assert len(result.valid_records) == 2
+    assert len(result.duplicates) == 1
+    assert len(result.quarantine) == 0
+
+
+def test_10_conflicting_keys(manifest, valid_records):
+    conflicting_data = valid_records.copy()
+
+    conflicting_row = valid_records.iloc[[0]].copy()
+    conflicting_row.loc[:, "pop"] = 99999999
+
+    conflicting_data = pd.concat(
+        [conflicting_data, conflicting_row],
+        ignore_index=True,
+    )
+
+    with pytest.raises(ValueError):
+        validate_dataset(conflicting_data, manifest)
+
