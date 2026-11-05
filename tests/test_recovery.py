@@ -89,3 +89,34 @@ def test_04_missing_column(tmp_path):
 
     with pytest.raises((ValueError, KeyError)):
         read_input(csv_path, settings)
+
+
+def test_05_missing_key(manifest, valid_records):
+    """A record with an empty country key should be quarantined."""
+    invalid_data = valid_records.copy()
+    invalid_data.loc[0, "country"] = ""
+
+    result = validate_dataset(invalid_data, manifest)
+
+    assert len(result.quarantine) == 1
+    assert len(result.valid_records) == 1
+
+
+def test_06_unparseable_number(manifest, valid_records):
+    invalid_data = valid_records.copy()
+    invalid_data["lifeExp"] = invalid_data["lifeExp"].astype(object)
+    invalid_data.loc[0, "lifeExp"] = "not-a-number"
+
+    result = validate_dataset(invalid_data, manifest)
+
+    assert len(result.quarantine) == 1
+    assert len(result.valid_records) == 1
+
+
+@pytest.mark.parametrize(
+    "column, invalid_value",
+    [
+        ("year", 1952.5),
+        ("pop", 1234.5),
+    ],
+)
