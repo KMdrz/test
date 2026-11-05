@@ -120,3 +120,31 @@ def test_06_unparseable_number(manifest, valid_records):
         ("pop", 1234.5),
     ],
 )
+def test_07_fractional_values(manifest, valid_records, column, invalid_value):
+    invalid_data = valid_records.copy()
+    invalid_data[column] = invalid_data[column].astype(float)
+    invalid_data.loc[0, column] = invalid_value
+
+    result = validate_dataset(invalid_data, manifest)
+
+    assert len(result.quarantine) == 1
+    assert len(result.valid_records) == 1
+
+
+@pytest.mark.parametrize(
+    "column, invalid_value",
+    [
+        ("lifeExp", float("inf")),
+        ("lifeExp", 121),
+        ("pop", float("nan")),
+        ("gdpPercap", -1),
+    ],
+)
+def test_08_non_finite_or_out_of_range(manifest, valid_records, column, invalid_value):
+    invalid_data = valid_records.copy()
+    invalid_data.loc[0, column] = invalid_value
+
+    result = validate_dataset(invalid_data, manifest)
+
+    assert len(result.quarantine) == 1
+    assert len(result.valid_records) == 1
