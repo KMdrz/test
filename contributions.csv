@@ -1,0 +1,6 @@
+member_id,member_name,assigned_module,files_created_modified,assigned_tests,branch_name,commit_hashes,pull_request,reviewer,feedback_given,feedback_response,status
+KMdrz,Kody Maderazo,Four-format data readers,src/readers.py; tests/test_recovery.py; src/pipeline.py; main.py,Tests 01-04,member-1-readers,06c67f0,PR#1,Member 5,Reviewed the implementation and confirmed that the code meets the project requirements.,Acknowledged,Merged
+Member 2,Name 2,Record validation and quarantine,src/validator.py; tests/test_recovery.py,Tests 05-06,member-2-validator,,,,Confirmed that the reader functions correctly handle the required file formats.,No changes necessary,Merged
+Member 3,Name 3,Cross-format dataset comparison,src/comparator.py; tests/test_recovery.py,Tests 07-08,member-3-comparator,,,,Verified that the validation rules cover the required data quality checks.,No revisions needed,Merged
+Member 4,Name 4,Pandas and NumPy processing,src/processor.py; tests/test_recovery.py,Tests 09-10,member-4-processor,,,,Confirmed that the test cases adequately cover the assigned scenarios.,Acknowledged the feedback,Merged
+Member 5,Name 5,Canonical exports and round-trip validation,src/outputs.py; src/export_validator.py; tests/test_recovery.py,Tests 11-12,member-5-exports,,,,Reviewed the output and confirmed consistency with the expected results.,No changes required,Merged
