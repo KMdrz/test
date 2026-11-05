@@ -1,0 +1,33 @@
+comparison,expected,actual,passed
+country_records.csv: row count,1704,1704,True
+country_records.csv: country-year keys,Same keys as reference,Match,True
+country_records.csv: country,Exact match,Match,True
+country_records.csv: continent,Exact match,Match,True
+country_records.csv: year,Exact match,Match,True
+country_records.csv: pop,Exact match,Match,True
+country_records.csv: lifeExp,Difference <= 1e-08,Maximum difference = 0.0,True
+country_records.csv: gdpPercap,Difference <= 1e-08,Maximum difference = 0.0,True
+country_records.xlsx: row count,1704,1704,True
+country_records.xlsx: country-year keys,Same keys as reference,Match,True
+country_records.xlsx: country,Exact match,Match,True
+country_records.xlsx: continent,Exact match,Match,True
+country_records.xlsx: year,Exact match,Match,True
+country_records.xlsx: pop,Exact match,Match,True
+country_records.xlsx: lifeExp,Difference <= 1e-08,Maximum difference = 0.0,True
+country_records.xlsx: gdpPercap,Difference <= 1e-08,Maximum difference = 0.0,True
+country_records.json: row count,1704,1704,True
+country_records.json: country-year keys,Same keys as reference,Match,True
+country_records.json: country,Exact match,Match,True
+country_records.json: continent,Exact match,Match,True
+country_records.json: year,Exact match,Match,True
+country_records.json: pop,Exact match,Match,True
+country_records.json: lifeExp,Difference <= 1e-08,Maximum difference = 0.0,True
+country_records.json: gdpPercap,Difference <= 1e-08,Maximum difference = 0.0,True
+country_records.parquet: row count,1704,1704,True
+country_records.parquet: country-year keys,Same keys as reference,Match,True
+country_records.parquet: country,Exact match,Match,True
+country_records.parquet: continent,Exact match,Match,True
+country_records.parquet: year,Exact match,Match,True
+country_records.parquet: pop,Exact match,Match,True
+country_records.parquet: lifeExp,Difference <= 1e-08,Maximum difference = 0.0,True
+country_records.parquet: gdpPercap,Difference <= 1e-08,Maximum difference = 0.0,True

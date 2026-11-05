@@ -1,0 +1,27 @@
+check,expected,actual,tolerance,pass
+country_records.csv raw rows,1712,1712,Exact,True
+country_records.csv rejected rows,6,6,Exact,True
+country_records.csv valid before deduplication,1706,1706,Exact,True
+country_records.csv exact duplicates removed,2,2,Exact,True
+country_records.csv canonical rows,1704,1704,Exact,True
+country_records.xlsx raw rows,1712,1712,Exact,True
+country_records.xlsx rejected rows,6,6,Exact,True
+country_records.xlsx valid before deduplication,1706,1706,Exact,True
+country_records.xlsx exact duplicates removed,2,2,Exact,True
+country_records.xlsx canonical rows,1704,1704,Exact,True
+country_records.json raw rows,1712,1712,Exact,True
+country_records.json rejected rows,6,6,Exact,True
+country_records.json valid before deduplication,1706,1706,Exact,True
+country_records.json exact duplicates removed,2,2,Exact,True
+country_records.json canonical rows,1704,1704,Exact,True
+country_records.parquet raw rows,1712,1712,Exact,True
+country_records.parquet rejected rows,6,6,Exact,True
+country_records.parquet valid before deduplication,1706,1706,Exact,True
+country_records.parquet exact duplicates removed,2,2,Exact,True
+country_records.parquet canonical rows,1704,1704,Exact,True
+Number of countries,142,142,Exact,True
+Philippines historical rows,12,12,Exact,True
+Asia rows in 2007,33,33,Exact,True
+Asia rows in 2007,33,33,Exact,True
+Philippines population in 2007,91077287,91077287,Exact,True
+Canonical export round-trip verification,True,True,All four exports must match the canonical dataset.,True

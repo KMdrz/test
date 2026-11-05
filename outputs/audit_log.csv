@@ -1,0 +1,11 @@
+action,source,details,status
+INPUT_HASH_CHECK,country_records.csv,SHA-256 and file size verified (159589 bytes).,SUCCESS
+INPUT_VALIDATION,country_records.csv,"Raw: 1712, quarantined: 6, duplicates: 2, valid: 1704",SUCCESS
+INPUT_HASH_CHECK,country_records.xlsx,SHA-256 and file size verified (81018 bytes).,SUCCESS
+INPUT_VALIDATION,country_records.xlsx,"Raw: 1712, quarantined: 6, duplicates: 2, valid: 1704",SUCCESS
+INPUT_HASH_CHECK,country_records.json,SHA-256 and file size verified (406030 bytes).,SUCCESS
+INPUT_VALIDATION,country_records.json,"Raw: 1712, quarantined: 6, duplicates: 2, valid: 1704",SUCCESS
+INPUT_HASH_CHECK,country_records.parquet,SHA-256 and file size verified (56905 bytes).,SUCCESS
+INPUT_VALIDATION,country_records.parquet,"Raw: 1712, quarantined: 6, duplicates: 2, valid: 1704",SUCCESS
+CROSS_FORMAT_COMPARISON,All four input files,Cleaned datasets compared using country/year keys.,SUCCESS
+ROUND_TRIP_VERIFICATION,Four canonical exports,All exported formats successfully reloaded and verified.,SUCCESS

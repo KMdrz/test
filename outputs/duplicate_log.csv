@@ -1,0 +1,9 @@
+source_file,source_record,duplicate_of_record,country,year
+country_records.csv,979,662,Bangladesh,1972
+country_records.csv,1236,487,Afghanistan,1977
+country_records.xlsx,1238,93,Bangladesh,1972
+country_records.xlsx,1574,535,Afghanistan,1977
+country_records.json,278,276,Afghanistan,1977
+country_records.json,1500,632,Bangladesh,1972
+country_records.parquet,964,843,Afghanistan,1977
+country_records.parquet,1661,1080,Bangladesh,1972
