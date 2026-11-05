@@ -1,0 +1,7 @@
+{
+    "manifest_path": "data/manifest.json",
+    "data_dir": "data",
+    "output_dir": "outputs",
+    "staging_dir": "outputs/staging",
+    "reporting_year": 2007
+}
