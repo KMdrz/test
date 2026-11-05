@@ -1,3 +1,4 @@
+
 """Automated tests for the four-format recovery project."""
 
 import pandas as pd
@@ -177,3 +178,29 @@ def test_10_conflicting_keys(manifest, valid_records):
     with pytest.raises(ValueError):
         validate_dataset(conflicting_data, manifest)
 
+
+def test_11_reordered_records(manifest, valid_records):
+    canonical_data = valid_records[manifest["canonical_order"]].copy()
+
+    reordered_data = canonical_data.iloc[::-1].reset_index(drop=True)
+
+    comparison = compare_datasets({
+        "original": canonical_data,
+        "reordered": reordered_data,
+    })
+
+    assert comparison["passed"].all()
+
+
+def test_12_corrupted_export(manifest, valid_records):
+    canonical_data = valid_records[manifest["canonical_order"]].copy()
+
+    corrupted_data = canonical_data.copy()
+    corrupted_data.loc[0, "pop"] += 1000
+
+    with pytest.raises(ValueError):
+        compare_export_to_canonical(
+            canonical_data,
+            corrupted_data,
+            "corrupted.csv",
+        )
